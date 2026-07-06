@@ -1,3 +1,6 @@
 """2988"""
 
-print("yes") if len(input()) == 13 else print("no")
+if len(input()) == 13:
+    print("yes")
+else:
+    print("no")
