@@ -15,7 +15,7 @@
 หมายเลข/ชื่อโจทย์ OJ:
 
 ```text
-
+OJ3011 - Colors
 ```
 
 OJ submission ID ถ้ามีการส่งแล้ว:
@@ -27,13 +27,13 @@ OJ submission ID ถ้ามีการส่งแล้ว:
 สถานะ OJ:
 
 ```text
-Pass / Not Pass / Not Submit
+Pass
 ```
 
 เวลาที่ใช้คิดและทำโจทย์ด้วยตนเอง:
 
 ```text
-
+30-60 minutes
 ```
 
 เลือกหนึ่งข้อ:
@@ -73,7 +73,13 @@ More than 4 weeks
 ถ้ายังไม่เข้าใจโจทย์ทั้งหมด ให้เขียนสิ่งที่เข้าใจในตอนนี้ ความเข้าใจอาจยังไม่ครบหรืออาจผิดได้ แต่ต้องพยายามอธิบายอย่างจริงใจ
 
 ```text
+การผสมสี
 
+input: รับค่าสีเป็น str และ รับค่าสีที่สองเป็น str
+
+ output: ควรพิมพ์ชื่อสีเช่น "Orange"
+
+constraints: เช็ค input และดำเนินตามเงื่อนไข
 ```
 
 ---
@@ -93,9 +99,13 @@ More than 4 weeks
 สามารถเขียนเป็น pseudocode, flowchart idea หรือขั้นตอนความคิดได้
 
 ```text
-Step 1:
-Step 2:
-Step 3:
+รับค่าข้อมูล 2 :x, y ตัวเป็น String
+ตรวจสอบว่า x และ y อยู่ในกลุ่มแม่สีพื้นฐานหรือไม่ ("Red", "Yellow", "Blue")
+เงื่อนไขที่ 1: หากเป็น Red + Yellow  แสดงผล Orange
+เงื่อนไขที่ 2: หากเป็น Red + Blue แสดงผล Violet
+เงื่อนไขที่ 3: หากเป็น Blue + Yellow แสดงผล Green
+เงื่อนไขที่ 4: หากเป็นสีเดียวกัน (x == y) แสดงชื่อสีนั้นๆ
+กรณีไม่เข้าเงื่อนไขใดเลย: แสดงผลลัพธ์เป็น Error
 ```
 
 ---
@@ -115,7 +125,7 @@ Step 3:
 ห้ามคัดลอกคำอธิบายจากคนอื่น
 
 ```text
-
+วิธีสุดท้ายของฉันเหมือนกับแผนแรก
 ```
 
 ---
@@ -135,31 +145,32 @@ Step 3:
 ทำไมเลือก case นี้:
 
 ```text
-
+แบบธรรมดา
 ```
 
 Input:
 
 ```text
-
+Red
+Yellow
 ```
 
 Expected output:
 
 ```text
-
+Orange
 ```
 
 Actual output:
 
 ```text
-
+Orange
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
+Pass
 ```
 
 ### Test Case 2
@@ -167,31 +178,32 @@ Pass / Not Pass
 ทำไมเลือก case นี้:
 
 ```text
-
+แบบสลับ
 ```
 
 Input:
 
 ```text
-
+Yellow
+Red
 ```
 
 Expected output:
 
 ```text
-
+Orange
 ```
 
 Actual output:
 
 ```text
-
+Orange
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
+Pass
 ```
 
 ### Test Case 3
@@ -199,31 +211,32 @@ Pass / Not Pass
 ทำไมเลือก case นี้:
 
 ```text
-
+แบบสีเดียวกัน
 ```
 
 Input:
 
 ```text
-
+Yellow
+Yellow
 ```
 
 Expected output:
 
 ```text
-
+Yellow
 ```
 
 Actual output:
 
 ```text
-
+Yellow
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
+Pass
 ```
 
 ---
@@ -233,7 +246,7 @@ Pass / Not Pass
 ใช้ AI กับโจทย์นี้หรือไม่
 
 ```text
-Yes / No
+No
 ```
 
 ถ้าใช้ AI ต้องทำไฟล์นี้ด้วย:
@@ -251,7 +264,7 @@ ai_reflection.md
 ได้ถามเพื่อน TA ผู้สอน หรือบุคคลอื่นเพื่อขอความช่วยเหลือในโจทย์นี้หรือไม่
 
 ```text
-Yes / No
+No
 ```
 
 ถ้าใช่ ให้อธิบายสั้น ๆ ว่าได้รับความช่วยเหลือแบบใด
@@ -305,10 +318,10 @@ No
 
 | Statement | Yes/No |
 |---|---|
-| I wrote this submission in my own words. | |
-| I understand my final code. | |
-| I recorded the real OJ status. | |
-| I did not copy AI-generated text directly into this file. | |
-| I did not copy code from another person. | |
-| If I received human help, I disclosed it in this file. | |
-| I submitted the final code to the OJ by myself. | |
+| I wrote this submission in my own words. | Yes |
+| I understand my final code. | Yes |
+| I recorded the real OJ status. | Yes |
+| I did not copy AI-generated text directly into this file. | Yes |
+| I did not copy code from another person. | Yes |
+| If I received human help, I disclosed it in this file. | Yes |
+| I submitted the final code to the OJ by myself. | Yes |
