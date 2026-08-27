@@ -1,4 +1,5 @@
 """3064: วันเกิด"""
+from datetime import date
 
 y1 = int(input())
 m1 = int(input())
@@ -7,25 +8,14 @@ y2 = int(input())
 m2 = int(input())
 d2 = int(input())
 
-Ysum = y1 - y2
-Msum = m1 - m2
-Dsum = abs(d1 - d2)
+date1 = date(y1, m1, d1)
+date2 = date(y2, m2, d2)
 
-#print(Ysum, Msum, Dsum)
+diff_days = abs((date1 - date2).days)
 
-if not Ysum:
-    if not Msum:
-        if 0 < Dsum <= 7:
-            print(0)
-        elif Dsum > 7:
-            print(2)
-        elif Dsum < 0:
-            print(1)
-    elif Msum > 0:
-        print(2)
-    elif Msum < 0:
-        print(1)
-elif Ysum < 0:
+if diff_days <= 7:
+    print(0)
+elif date1 < date2:
     print(1)
-elif Ysum > 0:
+else:
     print(2)
