@@ -2,17 +2,25 @@
 
 def main(sating):
     """Working Place"""
+    MAX_COUNT = 0
     COUNT = 0
     TEXT = ""
     REM = False
-    if "buu" in sating.lower():
-        for _, char in enumerate(sating):
-            if char.lower() == "b":
+    LOWER_SATING = sating.lower()
+    if "buu" in LOWER_SATING:
+        i = 0
+        while i < len(sating):
+            if LOWER_SATING[i] == 'b':
                 COUNT = 0
-            if char.lower() == "u":
-                COUNT += 1
-            
-        print(f"Yes {COUNT}")
+                i += 1
+                while i < len(sating) and LOWER_SATING[i] == 'u':
+                    COUNT += 1
+                    i += 1
+                if COUNT > MAX_COUNT:
+                    MAX_COUNT = COUNT
+            else:
+                i += 1
+        print(f"Yes {MAX_COUNT}")
     elif "b" in sating.lower():
         TEXT = list(sating)
         for pos, char in enumerate(TEXT):
