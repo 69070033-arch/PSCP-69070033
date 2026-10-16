@@ -9,11 +9,11 @@ next_demon = 0
 retry = []
 
 while kills < 5:
-    if retry:
-        current = retry.pop(0)
-    else:
+    if next_demon < len(demons):
         current = next_demon
         next_demon += 1
+    else:
+        current = retry.pop(0)
 
     print(demons[current], flush=True)
 
