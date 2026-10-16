@@ -1,36 +1,21 @@
 """3393: นักสำรวจถ้ำ (Cave Explorer)"""
 
-n = int(input())
+input()
 cave = list(map(int, input().split()))
-commands = input().strip()
+moves = input().strip()
 
-start = 0
-treasure = 0
-for i in range(n):
-    if cave[i] == 1:
-        start = i
-    elif cave[i] == 2:
-        treasure = i
+for move in moves:
+    here = cave.index(1)
+    there = here + (1 if move == "R" else -1)
 
-hero = start
-stopped = False
-
-for command in commands:
-    if command == 'R':
-        target = hero + 1
-    else:
-        target = hero - 1
-
-    if target < 0 or target >= n:
+    if not 0 <= there < len(cave):
         continue
 
-    hero = target
-    if hero == treasure:
-        stopped = True
+    if cave[there] == 2:
+        cave[here] = 0
+        cave[there] = 1
         break
 
-cave[start] = 0
-cave[treasure] = 0
-cave[hero] = 1
+    cave[here], cave[there] = cave[there], cave[here]
 
 print(*cave)

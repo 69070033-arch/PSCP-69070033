@@ -11,7 +11,7 @@ elif any(len(team) != m for team in scores) or any(
     print("Data Incorrect")
 else:
     total = 0
-    for team in scores:
+    for i, team in enumerate(scores, start=1):
         total += sum(team)
-        print(f"{sum(team) / m:.2f} {max(team)}")
-    print(total)
+        print(f"Team {i}: Average = {sum(team) / m:.2f}, Max = {max(team)}")
+    print(f"Total Score of All Teams = {total}")

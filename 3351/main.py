@@ -1,36 +1,30 @@
 """3351: พูดจากภาษากระต่าย"""
-word = input().strip().upper()
 
-if not any(letter in 'RAB' for letter in word):
-    print('unknown', len(word))
+message = input().lower()
+
+if all(char in "it" for char in message):
+    print("unknown", len(message))
 else:
-    bad = None
+    error_at = -1
 
-    for index, letter in enumerate(word):
-        if letter not in 'RABIT':
-            bad = index
-            break
-        elif letter == 'A' and (index == 0 or word[index - 1] not in 'RA'):
-            bad = index
-            break
-        elif letter == 'R' and word[index + 1:index + 2] != 'A':
-            bad = index
-            break
-        elif letter == 'B' and word[index + 1:index + 2] not in ('I', 'T'):
-            bad = index
-            break
+    for index, char in enumerate(message):
+        if char not in "rabit":
+            error_at = index
+        elif char == "r" and message[index + 1:index + 2] != "a":
+            error_at = index + 1
+        elif char == "b" and message[index + 1:index + 2] not in ("i", "t"):
+            error_at = index + 1
+        elif char == "a" and message[index - 1:index] not in ("r", "a"):
+            error_at = index
 
-    if bad is not None:
-        print('no', bad)
+        if error_at != -1:
+            print("no", error_at)
+            break
     else:
-        longest = 0
-        run = 0
+        run = longest = 0
 
-        for letter in word:
-            if letter == 'A':
-                run += 1
-            else:
-                run = 0
+        for char in message:
+            run = run + 1 if char == "a" else 0
             longest = max(longest, run)
 
-        print('yes', longest)
+        print("yes", longest)

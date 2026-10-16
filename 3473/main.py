@@ -1,18 +1,28 @@
-"""3473: FourDirections"""
-arrows = {
-    'U': ['  *  ', ' *** ', '* * *', '  *  ', '  *  '],
-    'D': ['  *  ', '  *  ', '* * *', ' *** ', '  *  '],
-    'L': ['  *  ', ' *   ', '*****', ' *   ', '  *  '],
-    'R': ['  *  ', '   * ', '*****', '   * ', '  *  '],
+"""four direction"""
+order = input()
+
+print("  *   " * len(order))
+
+line2 = {
+    "U": " * ", "D": "  *  ",
+    "L": " *   ", "R": "   * "
 }
 
-code = ''
-for letter in input():
-    if letter in arrows:
-        code = code + letter
+line3 = {
+    "U": "* * ", "D": " * *",
+    "L": "***", "R": "***"
+}
 
-for row in range(5):
-    line = ''
-    for letter in code:
-        line = line + arrows[letter][row] + ' '
-    print(line[:-1])
+line4 = {
+    "U": "  *  ", "D": " * ",
+    "L": " *   ", "R": "   * "    
+}
+
+line = [line2, line3, line4]
+
+for i in range(3): #each line
+    for word in order:
+        print(line[i].get(word), end=" ")
+    print()
+
+print("  *   " * len(order))
