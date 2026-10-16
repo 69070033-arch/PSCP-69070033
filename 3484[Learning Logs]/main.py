@@ -8,7 +8,7 @@ grid = [list(map(int, input().split())) for _ in range(size)]
 
 for row in grid:
     broken = sum(1 for value in row if value > 0)
-    print(*row, broken)
+    print(*row, broken, sum(row))
 
 column_broken = [0] * size
 column_points = [0] * size
