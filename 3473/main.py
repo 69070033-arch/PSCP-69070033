@@ -1,28 +1,29 @@
-"""four direction"""
-order = input()
+"""3473: FourDirection"""
 
-print("  *   " * len(order))
+directions = input().strip()
 
-line2 = {
-    "U": " * ", "D": "  *  ",
+print("  *   " * len(directions))
+
+TOP = {
+    "U": " *** ", "D": "  *  ",
     "L": " *   ", "R": "   * "
 }
 
-line3 = {
-    "U": "* * ", "D": " * *",
-    "L": "***", "R": "***"
+MIDDLE = {
+    "U": "* * *", "D": "* * *",
+    "L": "*****", "R": "*****"
 }
 
-line4 = {
-    "U": "  *  ", "D": " * ",
-    "L": " *   ", "R": "   * "    
+BOTTOM = {
+    "U": "  *  ", "D": " *** ",
+    "L": " *   ", "R": "   * "
 }
 
-line = [line2, line3, line4]
+ROWS = [TOP, MIDDLE, BOTTOM]
 
-for i in range(3): #each line
-    for word in order:
-        print(line[i].get(word), end=" ")
+for row in ROWS:
+    for direction in directions:
+        print(row.get(direction), end=" ")
     print()
 
-print("  *   " * len(order))
+print("  *   " * len(directions))
